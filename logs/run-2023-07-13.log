@@ -1,0 +1,7 @@
+2023-07-13 02:50:31,943 : INFO | Start Parsing Data Between 2023-05-28T23:00 and 2023-06-27T23:00
+2023-07-13 02:50:31,958 : INFO | Requesting Data From API
+2023-07-13 02:50:31,984 : DEBUG | Starting new HTTPS connection (1): api.energidataservice.dk:443
+2023-07-13 02:50:32,922 : DEBUG | https://api.energidataservice.dk:443 "GET /dataset/ConsumptionDE35Hour?offset=0&sort=HourUTC&timezone=utc&start=2023-05-28T23%3A00&end=2023-06-27T23%3A00 HTTP/1.1" 200 None
+2023-07-13 02:50:38,737 : INFO | Status: 200
+2023-07-13 02:50:38,922 : INFO | total records returned: 54720
+2023-07-13 02:50:38,922 : INFO | Converting Data Records to DataFrame

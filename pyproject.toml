@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "backfill-feature-store"
+version = "0.1.0"
+description = "shows how to backfill Energy Consumption feature in a Feature Store (Hopsworks) using an orchestration tool (Prefect)."
+authors = ["Ezzaldin97 <kingtal632@yahoo.com>"]
+readme = "README.md"
+packages = [{include = "backfill_feature_store"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+prefect = "^2.10.5"
+requests = "^2.28.2"
+pandas = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

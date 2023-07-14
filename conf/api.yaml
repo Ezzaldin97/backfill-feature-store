@@ -1,0 +1,4 @@
+url: "https://api.energidataservice.dk/dataset/ConsumptionDE35Hour"
+delay: 15
+days_to_export: 30
+consumer_type_unique_values: (111,112,119,121,122,123,130,211,212,215,220,310,320,330,340,350,360,370,381,382,390,410,421,422,431,432,433,441,442,443,444,445,446,447,450,461,462,999)
