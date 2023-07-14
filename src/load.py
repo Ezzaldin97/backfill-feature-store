@@ -33,7 +33,7 @@ class FeatureStoreLoader:
                feature_group_version: int,
                online_enabled: bool = False,
                overwrite: bool = False,
-               wait_for_job: bool = False) -> FeatureGroup:
+               wait_for_job: bool = False) -> None:
         log.LOG_FS.info("Create A Connection with HopsWorks Feature Store")
         fs_pointer = FeatureStoreLoader.hopsworks_pointer(self.fs_credentials["FS_API"],
                                                           self.fs_credentials["FS_PROJECT_NAME"])
@@ -64,4 +64,3 @@ class FeatureStoreLoader:
     }
         energy_consumption_feature_group.update_statistics_config()
         energy_consumption_feature_group.compute_statistics()
-        return energy_consumption_feature_group
