@@ -10,7 +10,7 @@ import logs_conf as log
 from extract import GetData
 from transform import TransfromData
 from validate import validator
-from load import FeatureStoreLoader
+#from load import FeatureStoreLoader
 import argparse
 from typing import Union, List
 
@@ -37,6 +37,7 @@ def transfrom_raw_data(df:pd.DataFrame) -> pd.DataFrame:
     new_df = transformer.transform()
     return new_df
 
+'''
 @task(name = "LoadData",
       description = "Load Transformed Data as a Feature Group to Hopsworks Feature Store")
 def load_data(df: pd.DataFrame,
@@ -60,7 +61,7 @@ def load_data(df: pd.DataFrame,
         overwrite = overwrite,
         wait_for_job = wait_for_job
     )
-
+'''
 
 @flow(name = "Pipeline",
       description = "Pipeline of Feature Store")
@@ -68,6 +69,7 @@ def pipline(ref_dt:datetime.datetime=datetime.datetime.utcnow().replace(minute=0
     log.LOG_MAIN.info("Main Flow Started")
     df = export_api_data(ref_dt)
     transformed_df = transfrom_raw_data(df)
+    '''
     load_data(df = transformed_df,
               validation_suite = validator,
               fg_name = "denmark_energy_consumption",
@@ -76,6 +78,7 @@ def pipline(ref_dt:datetime.datetime=datetime.datetime.utcnow().replace(minute=0
               fg_event_time = "HourUTC",
               feature_group_version = 1,
               wait_for_job = True)
+    '''
     log.LOG_MAIN.info("Main Flow Finished")
 
 if __name__ == "__main__":
